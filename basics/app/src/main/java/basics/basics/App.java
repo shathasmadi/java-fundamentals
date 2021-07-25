@@ -3,6 +3,8 @@
  */
 package basics;
 import java.util.Random;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 public class App {
 
     public static void main(String[] args) {
@@ -17,6 +19,7 @@ public class App {
         System.out.println("I own " + turtleCount + " " + pluralize("turtle", turtleCount) + ".");
 
         flipNHeads(1);
+        clock();
     }
 
     public static String pluralize(String animalName, int animalNum) {
@@ -48,4 +51,31 @@ public class App {
         System.out.println("It took " + trailNumber + " "  + " to flip " + headNumber + " head in a row.");
 
     }
-}
+    public static void clock() {
+        LocalDateTime now = LocalDateTime.now();
+        int hour = now.getHour();
+        int minute = now.getMinute();
+        int second = now.getSecond();
+
+        try {
+            while (true) {
+                now=LocalDateTime.now();
+                hour = now.getHour();
+                minute = now.getMinute();
+                second=now.getSecond();
+                System.out.println(hour+":"+minute+":"+second);
+                Thread.sleep(1000);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    }
+
+
+
+
+
+
