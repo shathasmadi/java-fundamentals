@@ -1,5 +1,6 @@
 # java-fundamentals
- .
+
+.
 ├── README.md
 ├── gradle
 │   └── wrapper
