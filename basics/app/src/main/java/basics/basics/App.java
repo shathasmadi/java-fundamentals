@@ -26,6 +26,7 @@ public class App {
             return animalName;
         }
     }
+
     public static void flipNHeads(int flipNum) {
         Random rand = new Random();
         float headTail;
@@ -45,7 +46,10 @@ public class App {
                 trailNumber = trailNumber + 1;
             }
         }
-        System.out.println("It took " + trailNumber + " "  + " to flip " + headNumber + " head in a row.");
+        System.out.println("It took " + trailNumber + " " + " to flip " + headNumber + " head in a row.");
 
     }
+    // Here My solution for Lab Two :
+
+
 }
