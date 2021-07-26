@@ -1,30 +1,41 @@
 # java-fundamentals
 
-── app
-│   ├── build.gradle
-│   └── src
-│       ├── main
-│       │   ├── java
-│       │   │   └── basics
-│       │   │       ├── basics
-│       │   │       │   └── App.java
-│       │   │       ├── basics.iml
-│       │   │       └── out
-│       │   │           └── production
-│       │   │               └── basics
-│       │   │                   ├── basics
-│       │   │                   │   └── App.class
-│       │   │                   └── basics.iml
-│       │   └── resources
-│       └── test
-│           ├── java
-│           │   └── basics
-│           │       └── AppTest.java
-│           └── resources
+.
+├── README.md
 ├── gradle
-│   └── wrapper
-│       ├── gradle-wrapper.jar
-│       └── gradle-wrapper.properties
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
 ├── gradlew
 ├── gradlew.bat
+├── lib
+│   ├── build
+│   │   ├── classes
+│   │   │   └── java
+│   │   │       └── main
+│   │   │           └── basiclibrary
+│   │   │               └── Library.class
+│   │   ├── generated
+│   │   │   └── sources
+│   │   │       ├── annotationProcessor
+│   │   │       │   └── java
+│   │   │       │       └── main
+│   │   │       └── headers
+│   │   │           └── java
+│   │   │               └── main
+│   │   └── tmp
+│   │       └── compileJava
+│   │           └── previous-compilation-data.bin
+│   ├── build.gradle
+│   └── src
+│       ├── main
+│       │   ├── java
+│       │   │   └── basiclibrary
+│       │   │       └── Library.java
+│       │   └── resources
+│       └── test
+│           ├── java
+│           │   └── basiclibrary
+│           │       └── LibraryTest.java
+│           └── resources
 └── settings.gradle
