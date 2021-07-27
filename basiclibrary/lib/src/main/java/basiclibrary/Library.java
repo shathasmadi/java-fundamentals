@@ -19,8 +19,21 @@ public class Library {
                 {65, 56, 55, 52, 55, 62, 57}
         };
         ArrOfArr(weeklyMonthTemperatures);
+        System.out.println(analyzeWeathData(weeklyMonthTemperatures));
+        List<String> votes = new ArrayList<>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+        System.out.println("the winner is " + tally(votes));
 
     }
+
 
     public static ArrayList roll(int n) {
         System.out.println(" roll  Function output:************");
@@ -58,20 +71,73 @@ public class Library {
         for (int i = 0; i < newArray.length; i++) {
             sum += newArray[i];
         }
-       double avg =  (double)sum / (newArray.length);
+        double avg = (double) sum / (newArray.length);
         System.out.println("Average = " + avg);
         return avg;
     }
 
-    public static int[] ArrOfArr(int[][] arr ){
-        int [] array= arr[0];
-        for (int i = 0; i <arr.length ; i++) {
-            if(Averages(arr[i])<Averages(array)){
-                array=arr[i];
+    public static int[] ArrOfArr(int[][] arr) {
+        int[] array = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (Averages(arr[i]) < Averages(array)) {
+                array = arr[i];
             }
         }
         System.out.println(Arrays.toString(array));
         return array;
     }
 
-}
+    public static String analyzeWeathData(int[][] data) {
+        HashSet<Integer> uniqueTempData = new HashSet<Integer>();
+        for (int i = 0; i < data.length; i++) {
+            for (Integer temp : data[i]) {
+                uniqueTempData.add(temp);
+            }
+        }
+//        System.out.println("Low Temperature " + Collections.min(uniqueTempData));
+        String lowTemp = "Low Temperature " + Collections.min(uniqueTempData);
+//        System.out.println("High Temperature " + Collections.max(uniqueTempData));
+        String highTemp = "\nHigh Temperature " + Collections.max(uniqueTempData);
+        String neverSaw = "";
+        for (int i = Collections.min(uniqueTempData); i < Collections.max(uniqueTempData); i++) {
+            if (!uniqueTempData.contains(i)) {
+//                System.out.println("Never saw temperature: " + i);
+                neverSaw += "\nNever saw temperature: " + i;
+
+            }
+        }
+        return lowTemp + highTemp + neverSaw;
+
+    }
+
+    public static String tally(List<String> votes) {
+        HashMap<String, Integer> membersVotes = new HashMap<String, Integer>();
+        int votesHolder = 0;
+        for (String mebName : votes) {
+            if (membersVotes.containsKey(mebName)) {
+                votesHolder = membersVotes.get(mebName) + 1;
+                membersVotes.put(mebName, votesHolder);
+            } else {
+                membersVotes.put(mebName, 1);
+            }
+        }
+        int maxVotes = 0;
+        for (int values : membersVotes.values()) {
+            if (maxVotes <= values) {
+                maxVotes = values;
+            }
+        }
+        String winner = "";
+        for (String key : membersVotes.keySet()) {
+            if (membersVotes.get(key) == maxVotes) {
+                winner =  key;
+            }
+        }
+
+        return winner;
+        }
+
+    }
+
+
+
