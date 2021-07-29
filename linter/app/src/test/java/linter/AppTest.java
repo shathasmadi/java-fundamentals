@@ -20,16 +20,38 @@ public class AppTest {
 
     @Test
     public void testCheckLine() {
+        //Test the linter on a file that contains one error
+
         Path p = Paths.get("src/main/resources/test.js");
-
-
-
         String expect = "Line 3 Missing semicolon.\n" ;
-
-
-
-
         assertEquals( expect, linter(p));
+
+        //Test the linter on a file that contains no error
+
+        Path noError= Paths.get("src/main/resources/noError.js");
+        String expectNo = "" ;
+        assertEquals( expectNo, linter(noError));
+
+        //Test the linter on a file that contains few errors.
+
+        Path fewError = Paths.get("src/main/resources/fewError.js");
+        String expectFew = "Line 3 Missing semicolon.\n" +"Line 5 Missing semicolon.\n";
+        assertEquals( expectFew, linter(fewError));
+
+        //Test the linter on a file that contains many errors.
+
+        Path manyError = Paths.get("src/main/resources/manyError.js");
+        String expectMany = "Line 3 Missing semicolon.\n" +"Line 5 Missing semicolon.\n"+"Line 11 Missing semicolon.\n"+"Line 13 Missing semicolon.\n"+
+                "Line 15 Missing semicolon.\n"+"Line 26 Missing semicolon.\n"+"Line 28 Missing semicolon.\n";
+        assertEquals( expectMany, linter(manyError));
+
+        //Test the linter on an empty file.
+
+        Path empty = Paths.get("src/main/resources/empty.js");
+        String expectedEmpty="";
+        assertEquals( expectedEmpty, linter(empty));
+
     }
+
 
 }
