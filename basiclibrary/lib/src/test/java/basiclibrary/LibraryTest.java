@@ -48,5 +48,5 @@ public class LibraryTest {
 
           assertEquals(out,tally(votes));
 
-    }
+   }
 }

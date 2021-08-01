@@ -5,8 +5,6 @@
 
 package linter;
 
-
-
 import org.junit.jupiter.api.Test;
 
 import java.nio.file.Path;
@@ -20,11 +18,12 @@ public class AppTest {
 
     @Test
     public void testCheckLine() {
+        App test=new App();
         //Test the linter on a file that contains one error
-
-        Path p = Paths.get("src/main/resources/test.js");
+        String output= linter(Path.of("test.js"));
+//        Path p = Paths.get("test.js");
         String expect = "Line 3 Missing semicolon.\n" ;
-        assertEquals( expect, linter(p));
+        assertEquals( expect, output);
 
         //Test the linter on a file that contains no error
 
