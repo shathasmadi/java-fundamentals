@@ -49,7 +49,7 @@ public class App {
         System.out.println("It took " + trailNumber + " " + " to flip " + headNumber + " head in a row.");
 
     }
-    // Here My solution for Lab Two :
+
 
 
 }
