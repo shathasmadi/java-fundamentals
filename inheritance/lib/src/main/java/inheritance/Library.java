@@ -6,9 +6,27 @@ package inheritance;
 public class Library {
 
     public static void main(String[] args) {
-       Restaurant newRes = new Restaurant("shatha",7);
-        newRes.addReview("shatha",4);
-        System.out.println(newRes);
+//       Restaurant newRes = new Restaurant("shatha",7);
+//        newRes.addReview("shatha",4);
+//        System.out.println(newRes);
+
+
+
+
+
+
+
+
+        Shop shop = new Shop("shatha","beautiful",4);
+        shop.shopesRev("shatha","i like it",5);
+        System.out.println(shop);
+
+
+
+        Theater theater =new Theater("shatha","conjouring");
+        theater.theatersRev("shatha","ilike it",3,"conj");
+        theater.addMovie("shatha");
+        System.out.println(theater);
 
     }
 

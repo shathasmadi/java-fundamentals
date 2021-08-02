@@ -12,27 +12,51 @@ class LibraryTest {
         assertEquals("Mac",testRes.getName());
         assertEquals(7,testRes.getPriceCategory());
 
-        assertEquals("Restaurant name='Mac', priceCategorys=7.0, stars=0.0, Rev=[]",testRes.toString());
+        assertEquals("Restaurant name='Mac', priceCategories=7.0, stars=0.0, Rev=[]",testRes.toString());
    }
 
    @Test void testReview(){
-       Review testRev = new Review("shatha",5);
+       Review testRev = new Review("shatha","I love this reasturant",5);
        assertEquals("shatha",testRev.getAuthor());
        assertEquals(5,testRev.getStars());
 
-       assertEquals("Review" +" "+
-               "author='" + testRev.getAuthor() + '\'' +
-               ", stars=" + testRev.getStars() +
-               " ",testRev.toString());
+
+       assertEquals("Review author='shatha', body='I love this reasturant', stars=5.0 ",testRev.toString());
    }
    @Test void testAddReview(){
        Restaurant restaurant = new Restaurant("shatha",4);
-       restaurant.addReview("shatha",5);
+       restaurant.addReview("shatha","I love this reasturant",5);
        assertEquals( "Restaurant" +" "+
                "name='" + restaurant.getName() + '\'' +
-               ", priceCategorys=" + restaurant.getPriceCategory() +
+               ", priceCategories=" + restaurant.getPriceCategory() +
                ", stars=" + restaurant.getStars() +
                ", Rev=" +restaurant.getRev(),restaurant.toString());
+   }
+
+   @Test void shop(){
+       Shop shop = new Shop("shatha","beautiful girl",8);
+       assertEquals("Shopname='shatha', description='beautiful girl', stars=0.0, numberOfDollarSigns=8, Reviews=[] ",shop.toString());
+   }
+
+   @Test void testAddReviewForShop(){
+       Review testReviewShop = new Review("shatha","i like it ",5);
+       assertEquals("Review author='shatha', body='i like it ', stars=5.0 ",testReviewShop.toString());
+   }
+   @Test void testTheater(){
+       Theater theaterTest = new Theater("shatha","conjouring");
+       assertEquals("Theater name='shatha', movie=[conjouring], reviews=[] ",theaterTest.toString());
+   }
+
+   @Test void addMovie(){
+       Theater theaterTest = new Theater("shatha","conjouring");
+       theaterTest.addMovie("jounweck");
+       assertEquals("Theater name='shatha', movie=[conjouring, jounweck], reviews=[] ",theaterTest.toString());
+
+   }
+   @Test void removeMovie(){
+       Theater theaterTest = new Theater("shatha","conjouring");
+       theaterTest.removeMovie("jounweck");
+       assertEquals("Theater name='shatha', movie=[conjouring], reviews=[] ",theaterTest.toString());
    }
 
 }
