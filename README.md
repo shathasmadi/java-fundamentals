@@ -1,3 +1,4 @@
+
 ── README.md
 ├── basiclibrary
 │   ├── gradle
@@ -95,6 +96,37 @@
 │   ├── gradlew.bat
 │   └── settings.gradle
 ├── code\ chellenge\ lab\ two
+=======
+# java-fundamentals
+
+.
+├── README.md
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+├── lib
+│   ├── build
+│   │   ├── classes
+│   │   │   └── java
+│   │   │       └── main
+│   │   │           └── basiclibrary
+│   │   │               └── Library.class
+│   │   ├── generated
+│   │   │   └── sources
+│   │   │       ├── annotationProcessor
+│   │   │       │   └── java
+│   │   │       │       └── main
+│   │   │       └── headers
+│   │   │           └── java
+│   │   │               └── main
+│   │   └── tmp
+│   │       └── compileJava
+│   │           └── previous-compilation-data.bin
+│   ├── build.gradle
+
 │   └── src
 │       └── Rechallenge.java
 ├── inheritance
